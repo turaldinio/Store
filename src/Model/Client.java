@@ -13,7 +13,7 @@ public class Client {
 
 
     public void putInBasket(Product product) {
-        order.pushInBasket(product);
+        order.putInBasket(product);
     }
 
     public void toPay() {

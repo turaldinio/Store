@@ -1,16 +1,17 @@
 package Model;
 
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.DoubleStream;
 
 public class Order {
-    private List<Product> basket;
-    private double sum;
+    private List<Product> basket=new ArrayList<>();
 
-    public void pushInBasket(Product product) {
+
+    public void putInBasket(Product product) {
         basket.add(product);
-        System.out.println(currentBasketSum());
+        System.out.println("Сумма товаров в корзине: "+currentBasketSum());
     }
 
     public double currentBasketSum() {
