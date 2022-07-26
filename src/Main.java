@@ -1,11 +1,10 @@
 import Model.Client;
 import Model.ElectronicsStore;
-import Model.Order;
+import Model.ElectronicStoreClientListener;
 import Model.Product;
 import abs.Store;
 
 import java.util.List;
-import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
@@ -20,7 +19,7 @@ public class Main {
         System.out.println("Здравствуйте, выберите необходимые товары:");
         System.out.println(store.showAllProducts());
 
-        Client client = new Client("Jon", 30250.20);
+        Client client = new Client("Jon", 30250.20, new ElectronicStoreClientListener());
         client.putInBasket(iphone13);
         client.putInBasket(iphoneSe);
         client.toPay();
