@@ -18,8 +18,11 @@ public class Main {
 
         Client client = new Client("Jon", 190324.20, new ElectronicStoreClientListener());
         client.putInBasket(iphone13);
-     //   client.putInBasket(iphoneSe);
         client.toPay(new PaymentProcessor());
+
+        store.expensiveFirst();
+
+
 
     }
 }

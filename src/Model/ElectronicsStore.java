@@ -9,4 +9,9 @@ public class ElectronicsStore extends Store {
         super(productList);
 
     }
+
+    @Override
+    public void expensiveFirst() {
+        super.expensiveFirst();
+    }
 }
