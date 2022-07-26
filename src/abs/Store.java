@@ -1,8 +1,12 @@
 package abs;
 
+import Model.Client;
+import Model.Product;
+
 import java.util.List;
 
 public abstract class Store {
+    private Client client;
 
     List<Product> productList;
 

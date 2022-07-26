@@ -1,4 +1,4 @@
-import abs.Product;
+package Model;
 
 import java.util.List;
 import java.util.stream.DoubleStream;
