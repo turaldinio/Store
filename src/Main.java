@@ -1,7 +1,4 @@
-import Model.Client;
-import Model.ElectronicsStore;
-import Model.ElectronicStoreClientListener;
-import Model.Product;
+import Model.*;
 import abs.Store;
 
 import java.util.List;
@@ -19,10 +16,10 @@ public class Main {
         System.out.println("Здравствуйте, выберите необходимые товары:");
         System.out.println(store.showAllProducts());
 
-        Client client = new Client("Jon", 30250.20, new ElectronicStoreClientListener());
+        Client client = new Client("Jon", 190324.20, new ElectronicStoreClientListener());
         client.putInBasket(iphone13);
-        client.putInBasket(iphoneSe);
-        client.toPay();
+     //   client.putInBasket(iphoneSe);
+        client.toPay(new PaymentProcessor());
 
     }
 }

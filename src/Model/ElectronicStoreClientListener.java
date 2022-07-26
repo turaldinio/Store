@@ -1,37 +1,30 @@
 package Model;
 
 
-import Interfaces.WorkingWithTheProduct;
+import Interfaces.WorkingWithTheBasket;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.DoubleStream;
 
-public class ElectronicStoreClientListener implements WorkingWithTheProduct {
+public class ElectronicStoreClientListener implements WorkingWithTheBasket {
     private List<Product> basket = new ArrayList<>();
 
     @Override
     public void addProductInBasket(Product product) {
         basket.add(product);
-        System.out.println("Сумма товаров в корзине: " + calculateTheAmount());
+        System.out.println("Сумма товаров в корзине: " + calculateTheAmountInBasket());
 
     }
 
     @Override
-    public double calculateTheAmount() {
+    public double calculateTheAmountInBasket() {
         return basket.stream()
                 .flatMapToDouble(x -> DoubleStream.of(x.getPrice()))
                 .sum();
 
     }
 
-    @Override
-    public boolean toPay(double wallet) {
-        if (wallet < calculateTheAmount()) {
-            return false;
-        }
-        return true;
-    }
 
 }
 
