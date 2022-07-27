@@ -42,7 +42,7 @@ public abstract class Store {
 
     public void alphabeticSort() {
         AlphabeticProductSort alphSort = () -> {
-            return productList.stream().sorted(Comparator.comparing(Product::getName)).collect(Collectors.toList());
+            return productList.stream().sorted((o1,o2)->(o2.getName().compareTo(o1.getName()))).collect(Collectors.toList());
         };
         System.out.println(alphSort.alphabeticSort());
     }
