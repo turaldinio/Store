@@ -1,4 +1,4 @@
-package Interfaces;
+package Buyer.Interfaces;
 
 public interface WorkingWithPayment {
 

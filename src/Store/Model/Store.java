@@ -1,9 +1,9 @@
-package Model;
+package Store.Model;
 
-import Interfaces.Sorted.AlphabeticProductSort;
-import Interfaces.Sorted.CheapProductFilter;
-import Interfaces.Sorted.ExpensiveProductFilter;
-import Interfaces.Sorted.RatingProductSort;
+import Store.Interfaces.AlphabeticProductSort;
+import Store.Interfaces.CheapProductFilter;
+import Store.Interfaces.ExpensiveProductFilter;
+import Store.Interfaces.RatingProductSort;
 
 import java.util.Comparator;
 import java.util.List;

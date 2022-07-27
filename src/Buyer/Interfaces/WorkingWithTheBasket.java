@@ -1,6 +1,4 @@
-package Interfaces;
-
-import Model.Product;
+package Buyer.Interfaces;
 
 public interface WorkingWithTheBasket {
 

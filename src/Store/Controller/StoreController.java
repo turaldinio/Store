@@ -1,16 +1,16 @@
-package Controller;
+package Store.Controller;
 
-import View.View;
-import Model.Product;
-import Model.Store;
+import Store.View.StoreView;
+import Store.Model.Product;
+import Store.Model.Store;
 
 import java.util.List;
 
 public class StoreController {
-    private View view;
+    private StoreView view;
     private Store store;
 
-    public StoreController(View view, Store store) {
+    public StoreController(StoreView view, Store store) {
         this.view = view;
         this.store = store;
     }

@@ -1,6 +1,6 @@
-package Interfaces.Sorted;
+package Store.Interfaces;
 
-import Model.Product;
+import Store.Model.Product;
 
 import java.util.List;
 

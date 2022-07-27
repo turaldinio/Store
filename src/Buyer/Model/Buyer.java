@@ -1,18 +1,19 @@
-package Model;
+package Buyer.Model;
 
-import Interfaces.WorkingWithPayment;
-import Interfaces.WorkingWithTheBasket;
+import Buyer.Interfaces.WorkingWithPayment;
+import Buyer.Interfaces.WorkingWithTheBasket;
+import Store.Model.Product;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.DoubleStream;
 
-public class Client {
+public abstract class Buyer {
     private final String name;
     private final double wallet;
     private List<Product> basket;
 
-    public Client(String name, double wallet) {
+    public Buyer(String name, double wallet) {
         this.name = name;
         this.wallet = wallet;
         this.basket = new ArrayList<>();
@@ -51,5 +52,7 @@ public class Client {
         return wallet;
     }
 
-
+    public List<Product> getBasket() {
+        return basket;
+    }
 }
