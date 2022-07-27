@@ -1,6 +1,7 @@
-package Store;
+package Model;
 
 import Model.Product;
+import Model.Store;
 
 import java.util.List;
 

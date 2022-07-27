@@ -1,9 +1,11 @@
+import Controller.StoreController;
 import Model.*;
-import Store.Store;
+import Model.Store;
 
 import java.util.List;
 
 import Store.*;
+import View.StoreViewImpl;
 
 public class Main {
     public static void main(String[] args) {
@@ -19,11 +21,14 @@ public class Main {
 
         Store store = new ElectronicsStore(productList);
 
+        StoreController storeController = new StoreController(new StoreViewImpl(), store);
+
+
         System.out.println("Здравствуйте, выберите необходимые товары:");
-        System.out.println(store.showAllProducts());
+        storeController.updateView(productList);
         System.out.println("----------------------------------------------");
         System.out.println("применяем сортировку по алфавиту");
-        store.alphabeticSort();
+        storeController.updateView(storeController.alphabeticSort());
         System.out.println("----------------------------------------------");
         System.out.println("Выбираем товар iphone13");
 
@@ -33,7 +38,6 @@ public class Main {
         System.out.println("Оплачиваем товар");
         client.toPay(new PaymentProcessor());
         System.out.println("----------------------------------------------");
-
 
 
     }

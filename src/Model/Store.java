@@ -1,4 +1,4 @@
-package Store;
+package Model;
 
 import Interfaces.Sorted.AlphabeticProductSort;
 import Interfaces.Sorted.CheapProductFilter;
@@ -14,51 +14,49 @@ public abstract class Store {
 
     private List<Product> productList;
 
+    public List<Product> getProductList() {
+        return productList;
+    }
+
+    public void setProductList(List<Product> productList) {
+        this.productList = productList;
+    }
+
     public Store(List<Product> productList) {
         this.productList = productList;
     }
 
-    public String showAllProducts() {
-        return productList.toString().
-                substring(1, productList.toString().length() - 1);
-    }
+  
 
-    public void cheapSort() {
+    public List<Product> cheapSort() {
 
         CheapProductFilter cheapFilter = () -> {
             return productList.stream().sorted(((o1, o2) -> (int) (o1.getPrice() - o2.getPrice()))).collect(Collectors.toList());
         };
-        printSortList(cheapFilter.cheapFirst());
-
+        return cheapFilter.cheapFirst();
     }
 
-    public void expensiveFirst() {
+    public List<Product> expensiveFirst() {
         ExpensiveProductFilter expensiveFilter = () -> {
             return productList.stream().sorted((o1, o2) -> (int) (o2.getPrice() - o1.getPrice())).collect(Collectors.toList());
         };
-        printSortList(expensiveFilter.expensiveFirst());
+        return expensiveFilter.expensiveFirst();
 
     }
 
-    public void alphabeticSort() {
+    public List<Product> alphabeticSort() {
         AlphabeticProductSort alphSort = () -> {
             return productList.stream().sorted(Comparator.comparing(Product::getName)).collect(Collectors.toList());
         };
-        printSortList(alphSort.alphabeticSort());
+        return alphSort.alphabeticSort();
     }
 
-    public void ratingSort() {
+    public List<Product> ratingSort() {
         RatingProductSort ratingSort = () -> {
             return productList.stream().sorted(Comparator.comparingDouble(Product::getRating)).collect(Collectors.toList());
         };
-        printSortList(ratingSort.ratingSort());
+        return ratingSort.ratingSort();
     }
-
-    public void printSortList(List<Product> result) {
-        System.out.println(result.toString().substring(1, result.toString().length() - 1));
-
-    }
-
-
 }
+
 
