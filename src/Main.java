@@ -25,10 +25,11 @@ public class Main {
 
 
         System.out.println("Здравствуйте, выберите необходимые товары:");
-        storeController.updateView(productList);
+        storeController.updateView();
         System.out.println("----------------------------------------------");
         System.out.println("применяем сортировку по алфавиту");
-        storeController.updateView(storeController.alphabeticSort());
+        storeController.alphabeticSort();
+        storeController.updateView();
         System.out.println("----------------------------------------------");
         System.out.println("Выбираем товар iphone13");
 

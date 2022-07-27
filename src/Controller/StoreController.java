@@ -23,24 +23,24 @@ public class StoreController {
         return store.getProductList();
     }
 
-    public void updateView(List<Product> list) {
-        view.printList(list);
+    public void updateView() {
+        view.printList(getList());
     }
 
-    public List<Product> expensiveFirst() {
-        return store.expensiveFirst();
+    public void expensiveFirst() {
+        store.expensiveFirst();
     }
 
-    public List<Product> cheapFirst() {
-        return store.cheapSort();
+    public void cheapFirst() {
+        store.cheapSort();
     }
 
-    public List<Product> alphabeticSort() {
-        return store.alphabeticSort();
+    public void alphabeticSort() {
+        store.alphabeticSort();
     }
 
-    public List<Product> ratingSort() {
-        return store.ratingSort();
+    public void ratingSort() {
+        store.ratingSort();
     }
 
 }
