@@ -1,13 +1,13 @@
-import Buyer.Model.Client;
-import Store.Controller.ClientController;
-import Store.Controller.StoreController;
-import Store.Model.*;
-import Store.Model.Store;
+import com.guluev.main.java.Buyer.Model.Client;
+import com.guluev.main.java.Product.Model.Product;
+import com.guluev.main.java.Store.Controller.StoreController;
+import com.guluev.main.java.Store.Model.*;
+import com.guluev.main.java.Store.Model.Store;
 
 import java.util.List;
 
-import Buyer.View.BuyerViewImpl;
-import Store.View.StoreViewImpl;
+import com.guluev.main.java.Buyer.View.BuyerViewImpl;
+import com.guluev.main.java.Store.View.StoreViewImpl;
 
 public class Main {
     public static void main(String[] args) {
