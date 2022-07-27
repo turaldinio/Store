@@ -20,7 +20,6 @@ public abstract class Buyer {
         this.basket = new ArrayList<>();
     }
 
-
     public void putInBasket(Product product) {
         basket.add(product);
     }
