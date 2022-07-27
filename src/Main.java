@@ -1,7 +1,9 @@
 import Model.*;
-import abs.Store;
+import Store.Store;
 
 import java.util.List;
+
+import Store.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -13,18 +15,25 @@ public class Main {
         Product laptopHp = new Product("Laptop HP-ZKF12", 34650, 4.2);
         Product headPonds = new Product("AirPods pro3", 12500, 8.1);
 
-        List<Product> productList = List.of(iphoneX, iphoneSe, iphone13, laptopHuawei,laptopSamsung,laptopHp,headPonds);
+        List<Product> productList = List.of(iphoneX, iphoneSe, iphone13, laptopHuawei, laptopSamsung, laptopHp, headPonds);
 
         Store store = new ElectronicsStore(productList);
 
         System.out.println("Здравствуйте, выберите необходимые товары:");
         System.out.println(store.showAllProducts());
-
-        Client client = new Client("Jon", 190324.20, new ElectronicStoreClientListener());
-        client.putInBasket(iphone13);
-        client.toPay(new PaymentProcessor());
-
+        System.out.println("----------------------------------------------");
+        System.out.println("применяем сортировку по алфавиту");
         store.alphabeticSort();
+        System.out.println("----------------------------------------------");
+        System.out.println("Выбираем товар iphone13");
+
+        Client client = new Client("Jon", 190324.20, new ElectronicStoreWorkingWithBasketImpl());
+        client.putInBasket(iphone13);
+        System.out.println("----------------------------------------------");
+        System.out.println("Оплачиваем товар");
+        client.toPay(new PaymentProcessor());
+        System.out.println("----------------------------------------------");
+
 
 
     }

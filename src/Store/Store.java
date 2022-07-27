@@ -1,4 +1,4 @@
-package abs;
+package Store;
 
 import Interfaces.Sorted.AlphabeticProductSort;
 import Interfaces.Sorted.CheapProductFilter;
@@ -28,7 +28,7 @@ public abstract class Store {
         CheapProductFilter cheapFilter = () -> {
             return productList.stream().sorted(((o1, o2) -> (int) (o1.getPrice() - o2.getPrice()))).collect(Collectors.toList());
         };
-        System.out.println(cheapFilter.cheapFirst());
+        printSortList(cheapFilter.cheapFirst());
 
     }
 
@@ -36,22 +36,27 @@ public abstract class Store {
         ExpensiveProductFilter expensiveFilter = () -> {
             return productList.stream().sorted((o1, o2) -> (int) (o2.getPrice() - o1.getPrice())).collect(Collectors.toList());
         };
-        System.out.println(expensiveFilter.expensiveFirst());
+        printSortList(expensiveFilter.expensiveFirst());
 
     }
 
     public void alphabeticSort() {
         AlphabeticProductSort alphSort = () -> {
-            return productList.stream().sorted((o1,o2)->(o2.getName().compareTo(o1.getName()))).collect(Collectors.toList());
+            return productList.stream().sorted(Comparator.comparing(Product::getName)).collect(Collectors.toList());
         };
-        System.out.println(alphSort.alphabeticSort());
+        printSortList(alphSort.alphabeticSort());
     }
 
     public void ratingSort() {
-        RatingProductSort ratingSort=()->{
-          return productList.stream().sorted(Comparator.comparingDouble(Product::getRating)).collect(Collectors.toList());
+        RatingProductSort ratingSort = () -> {
+            return productList.stream().sorted(Comparator.comparingDouble(Product::getRating)).collect(Collectors.toList());
         };
-        System.out.println(ratingSort.ratingSort());
+        printSortList(ratingSort.ratingSort());
+    }
+
+    public void printSortList(List<Product> result) {
+        System.out.println(result.toString().substring(1, result.toString().length() - 1));
+
     }
 
 

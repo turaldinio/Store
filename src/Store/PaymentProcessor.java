@@ -1,4 +1,4 @@
-package Model;
+package Store;
 
 import Interfaces.WorkingWithPayment;
 

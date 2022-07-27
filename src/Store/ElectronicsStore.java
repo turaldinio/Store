@@ -1,6 +1,6 @@
-package Model;
+package Store;
 
-import abs.Store;
+import Model.Product;
 
 import java.util.List;
 

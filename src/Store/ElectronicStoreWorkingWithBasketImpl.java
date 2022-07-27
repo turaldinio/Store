@@ -1,13 +1,14 @@
-package Model;
+package Store;
 
 
 import Interfaces.WorkingWithTheBasket;
+import Model.Product;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.DoubleStream;
 
-public class ElectronicStoreClientListener implements WorkingWithTheBasket {
+public class ElectronicStoreWorkingWithBasketImpl implements WorkingWithTheBasket {
     private List<Product> basket = new ArrayList<>();
 
     @Override
