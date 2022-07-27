@@ -2,5 +2,5 @@ package Interfaces;
 
 public interface WorkingWithPayment {
 
-    boolean pay(double wallet,double currentAmount);
+    boolean pay(double wallet);
 }

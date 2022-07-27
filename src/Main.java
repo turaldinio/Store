@@ -27,17 +27,19 @@ public class Main {
         System.out.println("Здравствуйте, выберите необходимые товары:");
         storeController.updateView();
         System.out.println("----------------------------------------------");
+
         System.out.println("применяем сортировку по алфавиту");
         storeController.alphabeticSort();
         storeController.updateView();
         System.out.println("----------------------------------------------");
-        System.out.println("Выбираем товар iphone13");
 
-        Client client = new Client("Jon", 190324.20, new ElectronicStoreWorkingWithBasketImpl());
+        System.out.println("Выбираем товар iphone13");
+        Client client = new Client("Jon", 190324.20);
         client.putInBasket(iphone13);
         System.out.println("----------------------------------------------");
+
         System.out.println("Оплачиваем товар");
-        client.toPay(new PaymentProcessor());
+
         System.out.println("----------------------------------------------");
 
 

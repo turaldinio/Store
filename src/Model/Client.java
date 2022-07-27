@@ -3,26 +3,39 @@ package Model;
 import Interfaces.WorkingWithPayment;
 import Interfaces.WorkingWithTheBasket;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.DoubleStream;
+
 public class Client {
     private final String name;
     private final double wallet;
-    private final WorkingWithTheBasket basket;
+    private List<Product> basket;
 
-    public Client(String name, double wallet, WorkingWithTheBasket working) {
+    public Client(String name, double wallet) {
         this.name = name;
         this.wallet = wallet;
-        this.basket = working;
+        this.basket = new ArrayList<>();
     }
 
 
     public void putInBasket(Product product) {
-        basket.addProductInBasket(product);
+        basket.add(product);
     }
 
+    public double currentBasketSum() {
+        WorkingWithTheBasket basketWorking = () -> {
+            return basket.stream().flatMapToDouble(x -> DoubleStream.of(x.getPrice())).sum();
+        };
+        return basketWorking.calculateTheAmountInBasket();
+    }
 
+    public void toPay(double currentAmount) {
 
-    public void toPay(WorkingWithPayment payment) {
-        if (payment.pay(wallet, basket.calculateTheAmountInBasket())) {
+        WorkingWithPayment payment = (wallet) -> {
+            return wallet >= currentAmount;
+        };
+        if (payment.pay(wallet)) {
             System.out.println("Оплата прошла успешно.Приходите еще!");
         } else {
             System.out.println("Недостаточно средств для оплаты");
@@ -38,7 +51,5 @@ public class Client {
         return wallet;
     }
 
-    public WorkingWithTheBasket getWorking() {
-        return basket;
-    }
+
 }
