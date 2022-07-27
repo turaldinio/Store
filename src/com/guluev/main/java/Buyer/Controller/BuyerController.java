@@ -2,7 +2,7 @@ package Buyer.Controller;
 
 import Buyer.Model.Client;
 import Buyer.View.BuyertView;
-import Product.Model.Product;
+import Product.Product;
 
 public class BuyerController {
     private Client client;

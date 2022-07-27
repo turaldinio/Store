@@ -1,6 +1,6 @@
 package Buyer.View;
 
-import Product.Model.Product;
+import Product.Product;
 
 import java.util.List;
 

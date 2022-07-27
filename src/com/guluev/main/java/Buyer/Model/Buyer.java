@@ -3,7 +3,7 @@ package Buyer.Model;
 
 import Buyer.Interfaces.WorkingWithPayment;
 import Buyer.Interfaces.WorkingWithTheBasket;
-import Product.Model.Product;
+import Product.Product;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,6 +1,6 @@
 package Store.Controller;
 
-import Product.Model.Product;
+import Product.Product;
 import Store.Model.Store;
 import Store.View.StoreView;
 

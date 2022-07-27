@@ -1,6 +1,7 @@
 package Store.Interfaces;
 
-import Product.Model.Product;
+
+import Product.Product;
 
 import java.util.List;
 

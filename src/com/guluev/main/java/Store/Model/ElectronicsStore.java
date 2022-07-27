@@ -1,6 +1,6 @@
 package Store.Model;
 
-import Product.Model.Product;
+import Product.Product;
 
 import java.util.List;
 

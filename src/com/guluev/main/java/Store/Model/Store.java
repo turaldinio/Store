@@ -1,6 +1,6 @@
 package Store.Model;
 
-import Product.Model.Product;
+import Product.Product;
 import Store.Interfaces.AlphabeticProductSort;
 import Store.Interfaces.CheapProductFilter;
 import Store.Interfaces.ExpensiveProductFilter;

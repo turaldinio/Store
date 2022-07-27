@@ -1,4 +1,4 @@
-package Product.Model;
+package Product;
 
 import com.google.gson.Gson;
 
