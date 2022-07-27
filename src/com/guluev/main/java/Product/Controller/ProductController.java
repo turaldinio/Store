@@ -1,7 +1,8 @@
-package com.guluev.main.java.Product.Controller;
+package Product.Controller;
 
-import com.guluev.main.java.Product.Model.Product;
-import com.guluev.main.java.Product.View.View;
+
+import Product.Model.Product;
+import Product.View.*;
 
 public class ProductController {
     private Product product;
@@ -28,12 +29,12 @@ public class ProductController {
         product.setRating(rating);
     }
 
-    public String getFulInfo() {
-        return product.getFullInfo();
+    public String productToJson() {
+        return product.productToJson();
     }
 
-    public void updateView() {
-        view.printInfo();
+    public void getFullInfo(String productName) {
+        view.printInfo((productName));
     }
 
 

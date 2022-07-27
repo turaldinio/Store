@@ -1,8 +1,8 @@
-package com.guluev.main.java.Buyer.Controller;
+package Buyer.Controller;
 
-import com.guluev.main.java.Buyer.Model.Client;
-import com.guluev.main.java.Product.Model.Product;
-import com.guluev.main.java.Buyer.View.BuyertView;
+import Buyer.Model.Client;
+import Buyer.View.BuyertView;
+import Product.Model.Product;
 
 public class BuyerController {
     private Client client;

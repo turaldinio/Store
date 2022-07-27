@@ -1,10 +1,10 @@
-package com.guluev.main.java.Store.Model;
+package Store.Model;
 
-import com.guluev.main.java.Product.Model.Product;
-import com.guluev.main.java.Store.Interfaces.AlphabeticProductSort;
-import com.guluev.main.java.Store.Interfaces.CheapProductFilter;
-import com.guluev.main.java.Store.Interfaces.ExpensiveProductFilter;
-import com.guluev.main.java.Store.Interfaces.RatingProductSort;
+import Product.Model.Product;
+import Store.Interfaces.AlphabeticProductSort;
+import Store.Interfaces.CheapProductFilter;
+import Store.Interfaces.ExpensiveProductFilter;
+import Store.Interfaces.RatingProductSort;
 
 import java.util.Comparator;
 import java.util.List;

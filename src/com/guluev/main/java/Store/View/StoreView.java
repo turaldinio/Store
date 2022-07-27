@@ -1,6 +1,6 @@
-package com.guluev.main.java.Store.View;
+package Store.View;
 
-import com.guluev.main.java.Product.Model.Product;
+import Product.Model.Product;
 
 import java.util.List;
 

@@ -1,6 +1,6 @@
-package com.guluev.main.java.Buyer.View;
+package Buyer.View;
 
-import com.guluev.main.java.Product.Model.Product;
+import Product.Model.Product;
 
 import java.util.List;
 

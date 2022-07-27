@@ -1,4 +1,4 @@
-package com.guluev.main.java.Buyer.Interfaces;
+package Buyer.Interfaces;
 
 public interface WorkingWithTheBasket {
 

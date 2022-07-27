@@ -1,4 +1,4 @@
-package com.guluev.main.java.Product.Model;
+package Product.Model;
 
 import com.google.gson.Gson;
 
@@ -35,16 +35,8 @@ public abstract class Product {
     }
 
     public String productToJson() {
-
-
-    }
-
-    public String getFullInfo() {
-        StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append("Название").append(getName()).append("\n").
-                append("Цена:").append(getPrice()).append("\n")
-                .append("Рейтинг:").append(getRating());
-        return stringBuilder.toString();
+        Gson gson = new Gson();
+        return gson.toJson(this);
     }
 
 

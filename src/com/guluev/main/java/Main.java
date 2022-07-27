@@ -1,30 +1,33 @@
-import com.guluev.main.java.Buyer.Model.Client;
-import com.guluev.main.java.Product.Model.Product;
-import com.guluev.main.java.Store.Controller.StoreController;
-import com.guluev.main.java.Store.Model.*;
-import com.guluev.main.java.Store.Model.Store;
+
+import Buyer.Controller.BuyerController;
+import Buyer.Model.Client;
+import Buyer.View.BuyerViewImpl;
+import Product.Model.Electronics;
+import Product.Model.Product;
+import Store.Controller.StoreController;
+import Store.Model.ElectronicsStore;
+import Store.Model.Store;
+import Store.View.StoreViewImpl;
 
 import java.util.List;
 
-import com.guluev.main.java.Buyer.View.BuyerViewImpl;
-import com.guluev.main.java.Store.View.StoreViewImpl;
 
 public class Main {
     public static void main(String[] args) {
-        Product iphoneSe = new Product("Iphone SE", 52000, 6.8);
-        Product iphoneX = new Product("Iphone X", 57200, 7.3);
-        Product iphone13 = new Product("Iphone 13", 83500, 8.2);
-        Product laptopHuawei = new Product("Laptop Huawei", 87500, 8.6);
-        Product laptopSamsung = new Product("Laptop Samsung-GHE12", 64500, 6.2);
-        Product laptopHp = new Product("Laptop HP-ZKF12", 34650, 4.2);
-        Product headPonds = new Product("AirPods pro3", 12500, 8.1);
+        Product iphoneSe = new Electronics("Iphone SE", 52000, 6.8);
+        Product iphoneX = new Electronics("Iphone X", 57200, 7.3);
+        Product iphone13 = new Electronics("Iphone 13", 83500, 8.2);
+        Product laptopHuawei = new Electronics("Laptop Huawei", 87500, 8.6);
+        Product laptopSamsung = new Electronics("Laptop Samsung-GHE12", 64500, 6.2);
+        Product laptopHp = new Electronics("Laptop HP-ZKF12", 34650, 4.2);
+        Product headPonds = new Electronics("AirPods pro3", 12500, 8.1);
 
         List<Product> productList = List.of(iphoneX, iphoneSe, iphone13, laptopHuawei, laptopSamsung, laptopHp, headPonds);
         Store store = new ElectronicsStore(productList);
         StoreController storeController = new StoreController(new StoreViewImpl(), store);
 
         Client client = new Client("Jon", 83_550);
-        ClientController clientController = new ClientController(client, new BuyerViewImpl());
+        BuyerController clientController = new BuyerController(client, new BuyerViewImpl());
 
 
         System.out.println("Здравствуйте, выберите необходимые товары:");
@@ -35,6 +38,7 @@ public class Main {
         storeController.alphabeticSort();
         storeController.updateView();
         System.out.println("----------------------------------------------");
+
 
         System.out.println("Выбираем товар iphone13");
         clientController.putInBasket(iphone13);

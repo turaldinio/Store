@@ -1,8 +1,8 @@
-package com.guluev.main.java.Store.Controller;
+package Store.Controller;
 
-import com.guluev.main.java.Store.View.StoreView;
-import com.guluev.main.java.Product.Model.Product;
-import com.guluev.main.java.Store.Model.Store;
+import Product.Model.Product;
+import Store.Model.Store;
+import Store.View.StoreView;
 
 import java.util.List;
 

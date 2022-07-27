@@ -1,8 +1,9 @@
-package com.guluev.main.java.Buyer.Model;
+package Buyer.Model;
 
-import com.guluev.main.java.Buyer.Interfaces.WorkingWithPayment;
-import com.guluev.main.java.Buyer.Interfaces.WorkingWithTheBasket;
-import com.guluev.main.java.Product.Model.Product;
+
+import Buyer.Interfaces.WorkingWithPayment;
+import Buyer.Interfaces.WorkingWithTheBasket;
+import Product.Model.Product;
 
 import java.util.ArrayList;
 import java.util.List;
