@@ -10,8 +10,5 @@ public class ElectronicsStore extends Store {
 
     }
 
-    @Override
-    public void expensiveFirst() {
-        super.expensiveFirst();
-    }
+
 }
